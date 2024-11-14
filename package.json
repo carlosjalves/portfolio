@@ -1,7 +1,6 @@
 {
   "name": "my-portfolio",
   "version": "0.1.0",
-  "homepage": "http://carlosjalves.github.io/portfolio",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -21,8 +20,6 @@
   "scripts": {
     "start": "PORT=3002 react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
