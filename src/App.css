@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+body {
+  margin: 0 30px;
+  letter-spacing: normal;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+h1 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 8vw;
+  margin: 0;
+}
+
+h2 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 32px;
+  margin: 0;
+}
+
+h4 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  margin: 0;
+}
+
+h5 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+}
+
+h6 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0;
+}
+
+p {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  margin: 0;
+}
+
+#navbar {
+  height: 65px;
+}
+
+#subnavbar {
+  padding: 15px 0 60px;
+}
+
+#subnavbar.subScrolled {
+  padding: 15px 0;
+}
+
+#navbar.scrolled {
+  height: 65px;
+}
