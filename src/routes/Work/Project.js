@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useTheme } from "@mui/material";
+//import { useTheme } from "@mui/material";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 
@@ -8,7 +8,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { fetchWithAuth } from "../../hooks/api";
 
 function Project() {
-  const theme = useTheme();
+  //const theme = useTheme();
   const [projectInfo, setProjectInfo] = useState(null);
   const [imageURLs, setImageURLs] = useState({});
   const { slug } = useParams();
