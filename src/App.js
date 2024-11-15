@@ -10,8 +10,6 @@ import { ThemeSetup } from "./styles/theme";
 import 'react-photo-view/dist/react-photo-view.css';
 
 function App() {
-
-
   return (
     <div className="App">
       <ThemeSetup>

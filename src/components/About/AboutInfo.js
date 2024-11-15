@@ -1,26 +1,17 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import { useTheme } from "@mui/material";
-import { fetchWithAuth } from "../../hooks/api";
+import aboutData from '../../data/About/aboutData';
 
 const AboutInfo = ({ slug, label }) => {
 
   const theme = useTheme();
-
-  const [aboutPageInfo, setaboutPageInfo] = useState(null);
+  const [aboutPageInfo, setAboutPageInfo] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        // Utiliza a função fetchWithAuth para garantir que o token está atualizado
-        const result = await fetchWithAuth(`${slug}?per_page=50`);
-        setaboutPageInfo(result);
-      } catch (error) {
-        console.error("Erro ao buscar informações:", error);
-      }
-    }
-
-    fetchData();
+    // Obtemos os dados diretamente do arquivo, sem precisar de fetch
+    const data = aboutData[slug] || []; // Se o slug não existir, retorna um array vazio
+    setAboutPageInfo(data);
   }, [slug]);
 
   if (!aboutPageInfo) {
@@ -68,12 +59,17 @@ const AboutInfo = ({ slug, label }) => {
               <h4 style={{ color: theme.palette.text.primary }}>{item.acf.company}</h4>
               <h5 style={{ fontWeight: 600, color: theme.palette.text.primary }}>{item.acf.date}</h5>
               <div style={{ paddingTop: "10px" }}>
-                {item.acf.description.split('\n').map((line, index) => (
-                  <h5 key={index} style={{ margin: 0 }}>
-                    {line}
-                  </h5>
+                {item.acf.description.split('\n\n').map((paragraph, index) => (
+                  <div key={index} style={{ marginBottom: "7px" }}>
+                    {paragraph.split('\n').map((line, lineIndex) => (
+                      <h5 key={lineIndex} style={{ margin: 0 }}>
+                        {line}
+                      </h5>
+                    ))}
+                  </div>
                 ))}
               </div>
+
             </div>
           ))}
         </div>
