@@ -132,8 +132,8 @@ function Navbar() {
             </Grid>
 
             <Grid size={3} sx={{ lineHeight: "13px" }}>
-              <CustomLink to={"/about"} theme={theme}><p>About</p></CustomLink>
-              <CustomLink to={"/"} theme={theme}><p>Work</p></CustomLink>
+              <CustomLink to={"portfolio/about"} theme={theme}><p>About</p></CustomLink>
+              <CustomLink to={"/portfolio"} theme={theme}><p>Work</p></CustomLink>
             </Grid>
           </Grid></>
 
