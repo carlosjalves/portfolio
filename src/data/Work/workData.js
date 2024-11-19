@@ -11,9 +11,9 @@ const projectsData = [
       tags: ['Graphic Design', 'Typography'],
       banner: require('../../assets/img/design-contest-winner/banner.jpg'),
       images: [
-        { id: "img1", url: require('../../assets/img/design-contest-winner/img1.jpg') },
         { id: "img2", url: require('../../assets/img/design-contest-winner/img2.jpeg') },
-        { id: "img3", url: require('../../assets/img/design-contest-winner/img3.jpg') }
+        { id: "img3", url: require('../../assets/img/design-contest-winner/img3.jpg') },
+        { id: "img1", url: require('../../assets/img/design-contest-winner/img1.jpg') }
       ]
     }
   },

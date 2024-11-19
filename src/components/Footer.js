@@ -1,4 +1,5 @@
 import { useTheme } from "@mui/material";
+import Grid from '@mui/material/Grid2';
 
 function Footer() {
 
@@ -6,16 +7,16 @@ function Footer() {
 
   return (
     <>
-      <div style={{ display: "grid", gridTemplateColumns: "25% 25% 25% 25%", width: 'calc(100vw - 60px)', backgroundColor: theme.palette.background, padding: "8px 0 15px", borderTop: `1px solid ${theme.palette.border}` }}>
-        <div style={{ lineHeight: "13px", gridColumnStart: 1 }}>
+      <Grid container sx={{ padding: "8px 0 15px", borderTop: `1px solid ${theme.palette.border}` }}>
+        <Grid size={6} style={{ lineHeight: "13px" }}>
           <p style={{ color: theme.palette.text.secondary }}>2024</p>
-        </div>
+        </Grid>
 
-        <div style={{ lineHeight: "13px", gridColumnStart: 3 }}>
+        <Grid size={6} style={{ lineHeight: "13px" }}>
           <p style={{ color: theme.palette.text.secondary }}>Designed and Developed by</p>
           <h5 style={{ color: theme.palette.text.primary }}>carlosjalves</h5>
-        </div>
-      </div>
+        </Grid>
+      </Grid>
     </>
   );
 }

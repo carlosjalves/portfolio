@@ -3,7 +3,7 @@
 const aboutData = {
   personal_info: [
     {
-      id: 1,
+      id: 'personal_info',
       acf: {
         email: "carlosjalves99@gmail.com",
         primary_text: "A passionate and versatile designer with a strong blend of creative and technical skills, driven by a commitment to creating impactful user experiences.",
@@ -13,7 +13,7 @@ const aboutData = {
   ],
   work_experience: [
     {
-      id: 1,
+      id: 'work_experience2',
       acf: {
         role: "Research Fellow (UX/UI Designer + Front-End Developer)",
         company: "CISUC - Centre for Informatics and Systems of the University of Coimbra",
@@ -22,7 +22,7 @@ const aboutData = {
       },
     },
     {
-      id: 2,
+      id: 'work_experience1',
       acf: {
         role: "Graphic Designer",
         company: "Impress24, Artes Gráficas e Publicidade",
@@ -33,7 +33,7 @@ const aboutData = {
   ],
   education: [
     {
-      id: 1,
+      id: 'education2',
       acf: {
         title: "Master's Degree in Design and Multimedia",
         school: "University of Coimbra",
@@ -42,7 +42,7 @@ const aboutData = {
       },
     },
     {
-      id: 2,
+      id: 'education1',
       acf: {
         title: "Bachelor's Degree in Design and Multimedia",
         school: "University of Coimbra",
@@ -60,141 +60,141 @@ const aboutData = {
       acf: { name: "Learning Agility" },
     },
     {
-      id: 1,
+      id: 3,
       acf: { name: "Communication" },
     },
     {
-      id: 2,
+      id: 4,
       acf: { name: "Team Collaboration" },
     },
     {
-      id: 1,
+      id: 5,
       acf: { name: "Proactive" },
     },
     {
-      id: 2,
+      id: 6,
       acf: { name: "Autonomous" },
     },
     {
-      id: 1,
+      id: 7,
       acf: { name: "Computational Design" },
     },
     {
-      id: 2,
+      id: 8,
       acf: { name: "Creative Coding" },
     },
     {
-      id: 2,
+      id: 9,
       acf: { name: "Processing" },
     },
     {
-      id: 1,
+      id: 10,
       acf: { name: "Web Development" },
     },
     {
-      id: 2,
+      id: 11,
       acf: { name: "Front-end Development" },
     },
     {
-      id: 1,
+      id: 12,
       acf: { name: "UX/UI Design" },
     },
     {
-      id: 2,
+      id: 13,
       acf: { name: "Digital Design" },
     },
     {
-      id: 1,
+      id: 14,
       acf: { name: "Graphic Design" },
     },
     {
-      id: 2,
+      id: 15,
       acf: { name: "Typography" },
     },
     {
-      id: 1,
+      id: 16,
       acf: { name: "Adobe Illustrator" },
     },
     {
-      id: 2,
+      id: 17,
       acf: { name: "Adobe Photoshop" },
     },
     {
-      id: 2,
+      id: 18,
       acf: { name: "Adobe InDesign" },
     },
     {
-      id: 1,
+      id: 19,
       acf: { name: "Adobe After Effects" },
     },
     {
-      id: 2,
+      id: 20,
       acf: { name: "CorelDRAW" },
     },
     {
-      id: 2,
+      id: 21,
       acf: { name: "Figma" },
     },
     {
-      id: 1,
+      id: 22,
       acf: { name: "HTML" },
     },
     {
-      id: 2,
+      id: 23,
       acf: { name: "CSS" },
     },
     {
-      id: 2,
+      id: 24,
       acf: { name: "SASS" },
     },
     {
-      id: 1,
+      id: 25,
       acf: { name: "JavaScript" },
     },
     {
-      id: 2,
+      id: 26,
       acf: { name: "TypeScript" },
     },
     {
-      id: 2,
+      id: 27,
       acf: { name: "React" },
     },
     {
-      id: 1,
+      id: 28,
       acf: { name: "P5 js" },
     },
     {
-      id: 2,
+      id: 29,
       acf: { name: "D3 js" },
     },
     {
-      id: 1,
+      id: 30,
       acf: { name: "Apache ECharts" },
     },
     {
-      id: 2,
+      id: 31,
       acf: { name: "PHP" },
     },
     {
-      id: 1,
+      id: 32,
       acf: { name: "SQL" },
     },
     {
-      id: 2,
+      id: 33,
       acf: { name: "Git" },
     },
     {
-      id: 1,
+      id: 34,
       acf: { name: "Agile" },
     },
     {
-      id: 2,
+      id: 35,
       acf: { name: "Scrum" },
     },
   ],
   honors_and_awards: [
     {
-      id: 1,
+      id: 'honors_and_awards1',
       acf: {
         title: "Winner of the contest \"Design da Empena de Divulgação do Ranking 'The University Impact Rankings'\"",
         giver: "University of Coimbra",
@@ -204,7 +204,7 @@ const aboutData = {
   ],
   volunteering: [
     {
-      id: 1,
+      id: 'volunteering1',
       acf: {
         role: "Staff",
         place: "28th International Conference Information Visualisation",

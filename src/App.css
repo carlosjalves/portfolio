@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
-body {
-  margin: 0 30px;
-  letter-spacing: normal;
-}
-
-.App {
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-}
-
 h1 {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;

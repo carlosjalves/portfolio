@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Box from '@mui/material/Box';
 
 import About from './routes/About/About';
 import Work from './routes/Work/Work';
@@ -11,7 +12,10 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 function App() {
   return (
-    <div className="App">
+    <Box sx={{
+      margin: "0 30px",
+      letterSpacing: "normal"
+    }}>
       <ThemeSetup>
         <BrowserRouter>
           <Navbar />
@@ -23,7 +27,7 @@ function App() {
           <Footer />
         </BrowserRouter>
       </ThemeSetup>
-    </div>
+    </Box>
   );
 }
 
