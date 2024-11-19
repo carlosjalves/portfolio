@@ -20,9 +20,9 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route path="/about" element={<About />} />
-            <Route path="/" element={<Work />} />
-            <Route path="/:slug" element={<Project />} />
+            <Route path="/portfolio/about" element={<About />} />
+            <Route path="/portfolio" element={<Work />} />
+            <Route path="/portfolio/:slug" element={<Project />} />
           </Routes>
           <Footer />
         </BrowserRouter>
