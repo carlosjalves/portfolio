@@ -74,7 +74,7 @@ function Work() {
                   className="project-container"
                 >
                   <div>
-                    <Link to={`/${item.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Link to={`/portfolio/${item.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                       <img
                         src={item.acf.banner}
                         alt=""

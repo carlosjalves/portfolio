@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Box from '@mui/material/Box';
 
 import About from './routes/About/About';
@@ -17,15 +17,13 @@ function App() {
       letterSpacing: "normal"
     }}>
       <ThemeSetup>
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/about" element={<About />} />
-            <Route path="/" element={<Work />} />
-            <Route path="/:slug" element={<Project />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/portfolio/about" element={<About />} />
+          <Route path="/portfolio" element={<Work />} />
+          <Route path="/portfolio/:slug" element={<Project />} />
+        </Routes>
+        <Footer />
       </ThemeSetup>
     </Box>
   );
