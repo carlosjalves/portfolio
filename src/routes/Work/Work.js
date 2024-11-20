@@ -43,7 +43,7 @@ function Work() {
           container
           spacing={2}
         >
-          <Grid container spacing={1} sx={{ padding: "30px 0" }}>
+          <Grid container spacing={1} sx={{ padding: "30px 0 15px 0" }}>
             {tags.map(tag => (
               <Grid size="auto" key={tag}>
                 <div
@@ -60,7 +60,7 @@ function Work() {
                     transition: 'all 0.3s ease',
                   }}
                 >
-                  <h4 style={{ margin: 0, whiteSpace: 'nowrap' }}>{tag}</h4>
+                  <h4 style={{ margin: 0, whiteSpace: 'nowrap', fontSize: '14px' }}>{tag}</h4>
                 </div>
               </Grid>
             ))}

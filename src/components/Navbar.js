@@ -139,7 +139,7 @@ function Navbar() {
 
       ) : (
         <>
-          <Grid container component='nav' sx={{ position: "fixed", top: 0, width: 'calc(100% - 60px)', padding: "15px 0", borderBottom: `1px solid ${theme.palette.border}`, backgroundColor: theme.palette.background, height: '90px', zIndex: "10" }}>
+          <Grid container component='nav' sx={{ position: "fixed", top: 0, left: 0, width: "100%", padding: "15px 30px", borderBottom: `1px solid ${theme.palette.border}`, backgroundColor: theme.palette.background, height: '90px', zIndex: "10" }}>
             <Grid size={9}>
               <Link to={"/portfolio"}>
                 <svg style={{ width: "auto", height: "30px" }} width="1564" height="284" viewBox="0 0 1564 284" fill="none" xmlns="http://www.w3.org/2000/svg">
