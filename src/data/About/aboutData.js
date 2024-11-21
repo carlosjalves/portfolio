@@ -7,7 +7,7 @@ const aboutData = {
       acf: {
         email: "carlosjalves99@gmail.com",
         primary_text: "A passionate and versatile designer with a strong blend of creative and technical skills, driven by a commitment to creating impactful user experiences.",
-        secondary_text: "A passionate and versatile designer with a strong blend of creative and technical skills, driven by a commitment to creating impactful user experiences. A passionate and versatile designer with a strong blend of creative and technical skills, driven by a commitment to creating impactful user experiences. A passionate and versatile designer with a strong blend of creative and technical skills, driven by a commitment to creating impactful user experiences.",
+        secondary_text: "My education and experience in Design and Multimedia have provided me with a unique combination of skills in design and technology, enabling me to create innovative digital products and services. Through a multidisciplinary approach, I specialize in areas such as Graphic Design, UX/UI Design, Web Design, Front-End Development, and Data Visualization, blending design principles with programming expertise. This foundation allows me to craft compelling user experiences while collaborating effectively with cross-functional teams, bridging the gap between creative vision and technical execution.",
       },
     },
   ],
