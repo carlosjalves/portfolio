@@ -185,10 +185,18 @@ const aboutData = {
     },
     {
       id: 34,
-      acf: { name: "Agile" },
+      acf: { name: "CMS" },
     },
     {
       id: 35,
+      acf: { name: "Wordpress" },
+    },
+    {
+      id: 36,
+      acf: { name: "Agile" },
+    },
+    {
+      id: 37,
       acf: { name: "Scrum" },
     },
   ],
