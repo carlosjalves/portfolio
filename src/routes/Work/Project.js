@@ -59,7 +59,7 @@ function Project() {
           <h5 style={{ paddingBottom: "50px" }}><strong>Tools:</strong> {projectInfo.acf.tools}</h5>
           {projectInfo.link !== "" && (
             <>
-              <Link href={projectInfo.link} target="_blank" rel="noopener noreferrer" sx={{ display: "flex", alignItems: "center", color: theme.palette.text.primary, cursor: "pointer" }}>
+              <Link href={projectInfo.link} target="_blank" rel="noopener noreferrer" sx={{ display: "flex", alignItems: "center", color: theme.palette.text.primary, cursor: "pointer", marginBottom: "30px" }}>
                 <IconButton size={'small'} sx={{ color: theme.palette.text.primary }}>
                   <GitHubIcon fontSize="small" />
                 </IconButton>
