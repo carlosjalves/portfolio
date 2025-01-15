@@ -13,6 +13,15 @@ const aboutData = {
   ],
   work_experience: [
     {
+      id: 'work_experience3',
+      acf: {
+        role: "Graphic Designer",
+        company: "SERFER",
+        date: "January 2025 - Present",
+        description: "Creation of advertising campaigns, brochures, catalogs, and more in line with the brand's strategy;\nDesign and development of packaging for a range of products, ensuring image consistency;\nCreation of offline and online graphic materials to promote the development and implementation of the brand;\nMonitoring the execution of the final artwork and the production of graphic materials, ensuring that they meet the requirements and are delivered in accordance with the established deadlines.",
+      },
+    },
+    {
       id: 'work_experience2',
       acf: {
         role: "Research Fellow (UX/UI Designer + Front-End Developer)",
