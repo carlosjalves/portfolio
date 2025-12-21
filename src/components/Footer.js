@@ -9,7 +9,7 @@ function Footer() {
     <>
       <Grid container sx={{ padding: "8px 0 15px", borderTop: `1px solid ${theme.palette.border}` }}>
         <Grid size={6} style={{ lineHeight: "13px" }}>
-          <p style={{ color: theme.palette.text.secondary }}>2024</p>
+          <p style={{ color: theme.palette.text.secondary }}>2026</p>
         </Grid>
 
         <Grid size={6} style={{ lineHeight: "13px" }}>

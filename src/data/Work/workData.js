@@ -321,6 +321,52 @@ const projectsData = [
       ]
     }
   },
+  {
+    id: 17,
+    slug: "rotulo-kimbo",
+    link: "",
+    acf: {
+      title: "\"Kimbo\" Label",
+      text: "Design created in a familiar context for a range of spice packaging, including piri-piri, malagueta, and chili peppers. Processed in Cabo Verde.",
+      keywords: "Label Design, Packaging Design, Branding",
+      tools: "Adobe Illustrator",
+      date: "20230802",
+      tags: ['Graphic Design'],
+      banner: require('../../assets/img/rotulo-kimbo/banner.jpg'),
+      images: [
+        { id: "img1", url: require('../../assets/img/rotulo-kimbo/img1.jpg') },
+        { id: "img2", url: require('../../assets/img/rotulo-kimbo/img2.jpg') },
+        { id: "img3", url: require('../../assets/img/rotulo-kimbo/img3.jpg') }
+      ]
+    }
+  },
+  {
+    id: 18,
+    slug: "pandemonium",
+    link: "",
+    acf: {
+      title: "Pandemonium",
+      text: "Pandemonium is a fictional exhibition inspired by the life and work of Elliott Earls, graphic designer, musician, and artist.",
+      keywords: "Graphic Design, Experimental Design, Multimedia Art, Exhibition, Contemporary Art, Typography, Interactive Design",
+      tools: "Adobe Illustrator, Adobe InDesign, Adobe Photoshop Processing, Blender",
+      date: "20230606",
+      tags: ['Graphic Design', 'Computational Design', 'Typography'],
+      banner: require('../../assets/img/pandemonium/banner.jpg'),
+      images: [
+        { id: "img1", url: require('../../assets/img/pandemonium/img1.jpg') },
+        { id: "img2", url: require('../../assets/img/pandemonium/img2.jpg') },
+        { id: "img3", url: require('../../assets/img/pandemonium/img3.jpg') },
+        { id: "img4", url: require('../../assets/img/pandemonium/img4.png') },
+        { id: "img5", url: require('../../assets/img/pandemonium/img5.png') },
+        { id: "img6", url: require('../../assets/img/pandemonium/img6.jpg') },
+        { id: "img7", url: require('../../assets/img/pandemonium/img7.jpg') },
+        { id: "img8", url: require('../../assets/img/pandemonium/img8.jpg') },
+        { id: "img9", url: require('../../assets/img/pandemonium/img9.jpg') },
+        { id: "img10", url: require('../../assets/img/pandemonium/img10.jpg') },
+        { id: "img11", url: require('../../assets/img/pandemonium/img11.jpg') }
+      ]
+    }
+  },
 ];
 
 export default projectsData;

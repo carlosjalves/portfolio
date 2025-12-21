@@ -74,144 +74,180 @@ const aboutData = {
     },
     {
       id: 4,
-      acf: { name: "Team Collaboration" },
+      acf: { name: "Attention to Detail" },
     },
     {
       id: 5,
-      acf: { name: "Proactive" },
+      acf: { name: "Team Collaboration" },
     },
     {
       id: 6,
-      acf: { name: "Autonomous" },
+      acf: { name: "Adaptability" },
     },
     {
       id: 7,
-      acf: { name: "Computational Design" },
+      acf: { name: "Proactivity" },
     },
     {
       id: 8,
-      acf: { name: "Creative Coding" },
+      acf: { name: "Autonomy" },
     },
     {
       id: 9,
-      acf: { name: "Processing" },
+      acf: { name: "Time Management" },
     },
     {
       id: 10,
-      acf: { name: "Web Development" },
+      acf: { name: "Creativity" },
     },
     {
       id: 11,
-      acf: { name: "Front-end Development" },
+      acf: { name: "Packaging Design" },
     },
     {
       id: 12,
-      acf: { name: "UX/UI Design" },
+      acf: { name: "Layout Design" },
     },
     {
       id: 13,
-      acf: { name: "Digital Design" },
+      acf: { name: "Prepress & Production Management" },
     },
     {
       id: 14,
-      acf: { name: "Graphic Design" },
+      acf: { name: "Computational Design" },
     },
     {
       id: 15,
-      acf: { name: "Typography" },
+      acf: { name: "Creative Coding" },
     },
     {
       id: 16,
-      acf: { name: "Adobe Illustrator" },
+      acf: { name: "Processing" },
     },
     {
       id: 17,
-      acf: { name: "Adobe Photoshop" },
+      acf: { name: "Web Development" },
     },
     {
       id: 18,
-      acf: { name: "Adobe InDesign" },
+      acf: { name: "Front-end Development" },
     },
     {
       id: 19,
-      acf: { name: "Adobe After Effects" },
+      acf: { name: "UX/UI Design" },
     },
     {
       id: 20,
-      acf: { name: "CorelDRAW" },
+      acf: { name: "Digital Design" },
     },
     {
       id: 21,
-      acf: { name: "Figma" },
+      acf: { name: "Graphic Design" },
     },
     {
       id: 22,
-      acf: { name: "HTML" },
+      acf: { name: "Typography" },
     },
     {
       id: 23,
-      acf: { name: "CSS" },
+      acf: { name: "Adobe Illustrator" },
     },
     {
       id: 24,
-      acf: { name: "SASS" },
+      acf: { name: "Adobe Photoshop" },
     },
     {
       id: 25,
-      acf: { name: "JavaScript" },
+      acf: { name: "Adobe InDesign" },
     },
     {
       id: 26,
-      acf: { name: "TypeScript" },
+      acf: { name: "Adobe After Effects" },
     },
     {
       id: 27,
-      acf: { name: "React" },
+      acf: { name: "CorelDRAW" },
     },
     {
       id: 28,
-      acf: { name: "P5 js" },
+      acf: { name: "Figma" },
     },
     {
       id: 29,
-      acf: { name: "D3 js" },
+      acf: { name: "HTML" },
     },
     {
       id: 30,
-      acf: { name: "Apache ECharts" },
+      acf: { name: "CSS" },
     },
     {
       id: 31,
-      acf: { name: "PHP" },
+      acf: { name: "SASS" },
     },
     {
       id: 32,
-      acf: { name: "SQL" },
+      acf: { name: "JavaScript" },
     },
     {
       id: 33,
-      acf: { name: "Git" },
+      acf: { name: "TypeScript" },
     },
     {
       id: 34,
-      acf: { name: "CMS" },
+      acf: { name: "React" },
     },
     {
       id: 35,
-      acf: { name: "Wordpress" },
+      acf: { name: "P5 js" },
     },
     {
       id: 36,
-      acf: { name: "Agile" },
+      acf: { name: "D3 js" },
     },
     {
       id: 37,
+      acf: { name: "Apache ECharts" },
+    },
+    {
+      id: 38,
+      acf: { name: "PHP" },
+    },
+    {
+      id: 39,
+      acf: { name: "SQL" },
+    },
+    {
+      id: 40,
+      acf: { name: "Git" },
+    },
+    {
+      id: 41,
+      acf: { name: "CMS" },
+    },
+    {
+      id: 42,
+      acf: { name: "Wordpress" },
+    },
+    {
+      id: 43,
+      acf: { name: "Agile" },
+    },
+    {
+      id: 44,
       acf: { name: "Scrum" },
     },
   ],
   honors_and_awards: [
     {
       id: 'honors_and_awards1',
+      acf: {
+        title: "Merit Board Distinction (Top 5% students)",
+        giver: "University of Coimbra",
+        date: "Academic Year 2023/2024",
+      },
+    },
+    {
+      id: 'honors_and_awards2',
       acf: {
         title: "Winner of the contest \"Design da Empena de Divulgação do Ranking 'The University Impact Rankings'\"",
         giver: "University of Coimbra",
