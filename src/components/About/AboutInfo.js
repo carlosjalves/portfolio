@@ -3,11 +3,17 @@ import { useState, useEffect } from "react";
 import { useTheme } from "@mui/material";
 import Grid from '@mui/material/Grid2';
 import aboutData from '../../data/About/aboutData';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+
+import { useMediaQuery } from '@mui/material';
+
 
 const AboutInfo = ({ slug, label }) => {
 
   const theme = useTheme();
   const [aboutPageInfo, setAboutPageInfo] = useState(null);
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
 
   useEffect(() => {
     // Obtemos os dados diretamente do arquivo, sem precisar de fetch
@@ -29,6 +35,31 @@ const AboutInfo = ({ slug, label }) => {
             <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 6 }} sx={{ paddingBottom: "30px" }}>
               <h6 style={{ color: theme.palette.text.secondary }}>Contact</h6>
               <h6><a href="mailto:carlosjalves99@gmail.com">{item.acf.email}</a></h6>
+              {!isMobile && (
+                <>
+                  <h6 style={{ color: theme.palette.text.secondary, paddingTop: "30px" }}>Social</h6>
+                  <h6>
+                    <a
+                      href="https://www.linkedin.com/in/carlosjalves99/"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}
+                    >
+                      LinkedIn <ArrowOutwardIcon fontSize="1.0rem" />
+                    </a>
+                  </h6>
+                  <h6>
+                    <a
+                      href="https://github.com/carlosjalves"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}
+                    >
+                      GitHub <ArrowOutwardIcon fontSize="1.0rem" />
+                    </a>
+                  </h6>
+                </>
+              )}
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3, lg: 3, xl: 2 }}>
               <h2 style={{ paddingBottom: "30px", color: theme.palette.text.primary }}>{item.acf.primary_text}</h2>
@@ -90,6 +121,36 @@ const AboutInfo = ({ slug, label }) => {
         <Grid container sx={{ padding: "15px 0", borderBottom: `1px solid ${theme.palette.border}`, paddingBottom: "100px" }}>
           <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 6 }} sx={{ paddingBottom: "10px" }}>
             <h6 id='skills' style={{ color: theme.palette.text.secondary }}>Skills</h6>
+          </Grid>
+          <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 3 }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "30px" }}>
+              {aboutPageInfo
+                .filter(item => item.id >= 1 && item.id <= 13)
+                .map(item => (
+                  <div key={item.id} style={{ width: "fit-content", border: `2px solid ${theme.palette.text.primary}`, borderRadius: "50px", padding: "5px 8px" }}>
+                    <h5 style={{ margin: 0, whiteSpace: "nowrap", color: theme.palette.text.primary }}>{item.acf.name}</h5>
+                  </div>
+                ))}
+            </div>
+
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+              {aboutPageInfo
+                .filter(item => item.id > 13)
+                .map(item => (
+                  <div key={item.id} style={{ width: "fit-content", border: `2px solid ${theme.palette.text.primary}`, borderRadius: "50px", padding: "5px 8px" }}>
+                    <h5 style={{ margin: 0, whiteSpace: "nowrap", color: theme.palette.text.primary }}>{item.acf.name}</h5>
+                  </div>
+                ))}
+            </div>
+
+          </Grid>
+        </Grid>
+      )}
+
+      {slug === 'qualities' && (
+        <Grid container sx={{ padding: "15px 0", borderBottom: `1px solid ${theme.palette.border}`, paddingBottom: "100px" }}>
+          <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 6 }} sx={{ paddingBottom: "10px" }}>
+            <h6 id='qualities' style={{ color: theme.palette.text.secondary }}>Qualities</h6>
           </Grid>
           <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 3 }}>
             <div style={{ gridColumnStart: 3, gridColumnEnd: 4, display: "flex", flexWrap: "wrap", gap: "8px" }}>

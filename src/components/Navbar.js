@@ -5,6 +5,10 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Grid from '@mui/material/Grid2';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'; //
+import FileDownloadRoundedIcon from '@mui/icons-material/FileDownloadRounded';
+import Button from '@mui/material/Button';
+import Typography from "@mui/material/Typography";
 
 import { useMediaQuery } from '@mui/material';
 
@@ -24,7 +28,6 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
-
 
 
 function Navbar() {
@@ -106,18 +109,33 @@ function Navbar() {
           </Grid>
 
           <Grid size={3}>
-            <Stack direction="row" spacing={0}>
-              <a style={{ textDecoration: "none" }} href='https://www.linkedin.com/in/carlosjalves99/' target="_blank" rel="noopener noreferrer">
-                <IconButton size={'small'} sx={{ color: theme.palette.text.primary }}>
-                  <LinkedInIcon />
-                </IconButton>
-              </a>
-              <a style={{ textDecoration: "none" }} href='https://github.com/carlosjalves' target="_blank" rel="noopener noreferrer">
-                <IconButton size={'small'} sx={{ color: theme.palette.text.primary }}>
-                  <GitHubIcon />
-                </IconButton>
-              </a>
-            </Stack>
+            <Button
+              variant="text"
+              endIcon={<FileDownloadOutlinedIcon />}
+              href="/files/CV_CarlosAlves_en.pdf"
+              download
+              sx={{
+                color: theme.palette.text.primary,
+                textTransform: "none",
+                minWidth: "auto",
+                padding: "5px 10px",
+                borderRadius: "20px",
+                ml: "-10px",
+                "&:hover": {
+                  backgroundColor: theme.palette.action.hover,
+                },
+                "& .MuiButton-endIcon": {
+                  ml: "0px",
+                },
+              }}
+            >
+              <Typography
+                variant="body2"
+                sx={{ fontSize: "0.95rem", fontWeight: 500 }}
+              >
+                CV
+              </Typography>
+            </Button>
           </Grid>
 
           <Grid size={3} container justifyContent="flex-end">
@@ -127,8 +145,8 @@ function Navbar() {
           </Grid>
         </Grid><Grid ref={subnavRef} component='nav' id='subnavbar' style={{ position: "fixed", top: `${navHeight}px`, display: "grid", gridTemplateColumns: "25% 25% 25% 25%", width: 'calc(100% - 60px)', backgroundColor: theme.palette.background, borderBottom: `1px solid ${theme.palette.border}`, transition: "top 1s ease, padding 0.7s ease", zIndex: "10" }}>
             <Grid size={{ xs: 0, sm: 0, md: 3, lg: 3, xl: 3 }} sx={{ lineHeight: "13px" }}>
+              <p style={{ color: theme.palette.text.secondary }}>Multidisciplinary</p>
               <p style={{ color: theme.palette.text.secondary }}>Designer</p>
-              <p style={{ color: theme.palette.text.secondary }}>Developer</p>
             </Grid>
 
             <Grid size={3} sx={{ lineHeight: "13px" }}>
@@ -159,8 +177,8 @@ function Navbar() {
               )}
             </Grid>
             <Grid size={12} sx={{ lineHeight: "13px", marginTop: "-25px" }}>
+              <p style={{ color: theme.palette.text.secondary }}>Multidisciplinary</p>
               <p style={{ color: theme.palette.text.secondary }}>Designer</p>
-              <p style={{ color: theme.palette.text.secondary }}>Developer</p>
             </Grid>
             <Drawer anchor={'bottom'} open={open} hideBackdrop onClose={toggleDrawer(false)} PaperProps={{ sx: { top: "90px", backgroundColor: theme.palette.background } }} ModalProps={{ sx: { top: "90px" } }}>
               <Box sx={{ width: 'auto' }} role="presentation" /*onClick={toggleDrawer(false)}*/>
@@ -174,6 +192,34 @@ function Navbar() {
                 </List>
                 <Divider />
                 <List>
+                  <ListItem alignItems='center' sx={{ justifyContent: "center" }}>
+                    <Button
+                      variant="text"
+                      endIcon={<FileDownloadRoundedIcon />}
+                      href="/files/CV_CarlosAlves_en.pdf"
+                      download
+                      sx={{
+                        color: theme.palette.text.primary,
+                        textTransform: "none",
+                        minWidth: "auto",
+                        padding: "5px 10px",
+                        borderRadius: "20px",
+                        "&:hover": {
+                          backgroundColor: theme.palette.action.hover,
+                        },
+                        "& .MuiButton-endIcon": {
+                          ml: "0px",
+                        },
+                      }}
+                    >
+                      <Typography
+                        variant="body2"
+                        sx={{ fontSize: "0.9rem", fontWeight: 500 }}
+                      >
+                        CV
+                      </Typography>
+                    </Button>
+                  </ListItem>
                   <ListItem alignItems='center' sx={{ justifyContent: "center" }}>
                     <Stack direction="row" spacing={0}>
                       <a style={{ textDecoration: "none" }} href='https://www.linkedin.com/in/carlosjalves99/' target="_blank" rel="noopener noreferrer">

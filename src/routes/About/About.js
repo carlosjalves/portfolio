@@ -8,6 +8,7 @@ function About() {
       <AboutInfo slug={"work_experience"} />
       <AboutInfo slug={"education"} />
       <AboutInfo slug={"skills"} />
+      <AboutInfo slug={"qualities"} />
       <AboutInfo slug={"honors_and_awards"} />
       <AboutInfo slug={"volunteering"} />
     </>

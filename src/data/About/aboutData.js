@@ -1,5 +1,3 @@
-// src/data/aboutData.js
-
 const aboutData = {
   personal_info: [
     {
@@ -7,7 +5,7 @@ const aboutData = {
       acf: {
         email: "carlosjalves99@gmail.com",
         primary_text: "A passionate and versatile designer with a strong blend of creative and technical skills, driven by a commitment to creating impactful user experiences.",
-        secondary_text: "My education and experience in Design and Multimedia have provided me with a unique combination of skills in design and technology, enabling me to create innovative digital products and services. Through a multidisciplinary approach, I specialize in areas such as Graphic Design, UX/UI Design, Web Design, Front-End Development, and Data Visualization, blending design principles with programming expertise. This foundation allows me to craft compelling user experiences while collaborating effectively with cross-functional teams, bridging the gap between creative vision and technical execution.",
+        secondary_text: "My education and experience in Design and Multimedia have provided me with a unique combination of skills in design and technology, enabling me to create innovative digital products and services. Through a multidisciplinary approach, I specialize in areas such as Graphic Design, UX/UI Design, Data Visualization and Web Development, blending design principles with programming expertise. This foundation allows me to craft compelling user experiences while collaborating effectively with cross-functional teams, bridging the gap between creative vision and technical execution.",
       },
     },
   ],
@@ -62,6 +60,152 @@ const aboutData = {
   skills: [
     {
       id: 1,
+      acf: { name: "Graphic Design" },
+    },
+    {
+      id: 2,
+      acf: { name: "Visual Identity" },
+    },
+    {
+      id: 3,
+      acf: { name: "Packaging Design" },
+    },
+    {
+      id: 4,
+      acf: { name: "Layout Design" },
+    },
+    {
+      id: 5,
+      acf: { name: "Prepress & Production Management" },
+    },
+    {
+      id: 6,
+      acf: { name: "Digital Design" },
+    },
+    {
+      id: 7,
+      acf: { name: "Computational Design" },
+    },
+    {
+      id: 8,
+      acf: { name: "Creative Coding" },
+    },
+    {
+      id: 9,
+      acf: { name: "Type Design" },
+    },
+    {
+      id: 10,
+      acf: { name: "Editorial Design" },
+    },
+    {
+      id: 11,
+      acf: { name: "Data Visualization" },
+    },
+    {
+      id: 12,
+      acf: { name: "UX/UI Design" },
+    },
+    {
+      id: 13,
+      acf: { name: "Web Development" },
+    },
+    {
+      id: 14,
+      acf: { name: "Adobe Illustrator" },
+    },
+    {
+      id: 15,
+      acf: { name: "Adobe InDesign" },
+    },
+    {
+      id: 16,
+      acf: { name: "Adobe Photoshop" },
+    },
+    {
+      id: 17,
+      acf: { name: "Adobe Premiere Pro" },
+    },
+    {
+      id: 18,
+      acf: { name: "CorelDRAW" },
+    },
+    {
+      id: 19,
+      acf: { name: "Figma" },
+    },
+    {
+      id: 20,
+      acf: { name: "Processing (Java)" },
+    },
+    {
+      id: 21,
+      acf: { name: "HTML" },
+    },
+    {
+      id: 22,
+      acf: { name: "CSS" },
+    },
+    {
+      id: 23,
+      acf: { name: "SASS" },
+    },
+    {
+      id: 24,
+      acf: { name: "JavaScript" },
+    },
+    {
+      id: 25,
+      acf: { name: "TypeScript" },
+    },
+    {
+      id: 26,
+      acf: { name: "React" },
+    },
+    {
+      id: 27,
+      acf: { name: "P5 js" },
+    },
+    {
+      id: 38,
+      acf: { name: "D3 js" },
+    },
+    {
+      id: 29,
+      acf: { name: "Apache ECharts" },
+    },
+    {
+      id: 30,
+      acf: { name: "PHP" },
+    },
+    {
+      id: 31,
+      acf: { name: "SQL" },
+    },
+    {
+      id: 32,
+      acf: { name: "Git" },
+    },
+    {
+      id: 33,
+      acf: { name: "CMS" },
+    },
+    {
+      id: 34,
+      acf: { name: "Wordpress" },
+    },
+    {
+      id: 35,
+      acf: { name: "Agile" },
+    },
+    {
+      id: 36,
+      acf: { name: "Scrum" },
+    },
+  ],
+  qualities: [
+    {
+      id: 1,
       acf: { name: "Problem-Solving" },
     },
     {
@@ -78,7 +222,7 @@ const aboutData = {
     },
     {
       id: 5,
-      acf: { name: "Team Collaboration" },
+      acf: { name: "Teamwork" },
     },
     {
       id: 6,
@@ -99,142 +243,6 @@ const aboutData = {
     {
       id: 10,
       acf: { name: "Creativity" },
-    },
-    {
-      id: 11,
-      acf: { name: "Packaging Design" },
-    },
-    {
-      id: 12,
-      acf: { name: "Layout Design" },
-    },
-    {
-      id: 13,
-      acf: { name: "Prepress & Production Management" },
-    },
-    {
-      id: 14,
-      acf: { name: "Computational Design" },
-    },
-    {
-      id: 15,
-      acf: { name: "Creative Coding" },
-    },
-    {
-      id: 16,
-      acf: { name: "Processing" },
-    },
-    {
-      id: 17,
-      acf: { name: "Web Development" },
-    },
-    {
-      id: 18,
-      acf: { name: "Front-end Development" },
-    },
-    {
-      id: 19,
-      acf: { name: "UX/UI Design" },
-    },
-    {
-      id: 20,
-      acf: { name: "Digital Design" },
-    },
-    {
-      id: 21,
-      acf: { name: "Graphic Design" },
-    },
-    {
-      id: 22,
-      acf: { name: "Typography" },
-    },
-    {
-      id: 23,
-      acf: { name: "Adobe Illustrator" },
-    },
-    {
-      id: 24,
-      acf: { name: "Adobe Photoshop" },
-    },
-    {
-      id: 25,
-      acf: { name: "Adobe InDesign" },
-    },
-    {
-      id: 26,
-      acf: { name: "Adobe After Effects" },
-    },
-    {
-      id: 27,
-      acf: { name: "CorelDRAW" },
-    },
-    {
-      id: 28,
-      acf: { name: "Figma" },
-    },
-    {
-      id: 29,
-      acf: { name: "HTML" },
-    },
-    {
-      id: 30,
-      acf: { name: "CSS" },
-    },
-    {
-      id: 31,
-      acf: { name: "SASS" },
-    },
-    {
-      id: 32,
-      acf: { name: "JavaScript" },
-    },
-    {
-      id: 33,
-      acf: { name: "TypeScript" },
-    },
-    {
-      id: 34,
-      acf: { name: "React" },
-    },
-    {
-      id: 35,
-      acf: { name: "P5 js" },
-    },
-    {
-      id: 36,
-      acf: { name: "D3 js" },
-    },
-    {
-      id: 37,
-      acf: { name: "Apache ECharts" },
-    },
-    {
-      id: 38,
-      acf: { name: "PHP" },
-    },
-    {
-      id: 39,
-      acf: { name: "SQL" },
-    },
-    {
-      id: 40,
-      acf: { name: "Git" },
-    },
-    {
-      id: 41,
-      acf: { name: "CMS" },
-    },
-    {
-      id: 42,
-      acf: { name: "Wordpress" },
-    },
-    {
-      id: 43,
-      acf: { name: "Agile" },
-    },
-    {
-      id: 44,
-      acf: { name: "Scrum" },
     },
   ],
   honors_and_awards: [
