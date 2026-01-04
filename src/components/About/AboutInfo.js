@@ -14,6 +14,18 @@ const AboutInfo = ({ slug, label }) => {
   const [aboutPageInfo, setAboutPageInfo] = useState(null);
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
+  const getRandomColor = () => {
+    const colors = [
+      "#FF6B6B",
+      "#4ECDC4",
+      "#FFD93D",
+      "#6C63FF",
+      "#F72585",
+      "#00BBF9",
+      "#9B5DE5"
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
+  };
 
   useEffect(() => {
     // Obtemos os dados diretamente do arquivo, sem precisar de fetch
@@ -139,7 +151,32 @@ const AboutInfo = ({ slug, label }) => {
               {aboutPageInfo
                 .filter(item => item.id >= 1 && item.id <= 13)
                 .map(item => (
-                  <div key={item.id} style={{ width: "fit-content", border: `2px solid ${theme.palette.text.primary}`, borderRadius: "50px", padding: "5px 8px" }}>
+                  <div
+                    key={item.id}
+                    style={{
+                      width: "fit-content",
+                      border: `2px solid ${theme.palette.text.primary}`,
+                      borderRadius: "50px",
+                      padding: "5px 8px",
+                      transition: "all 0.2s ease",
+                      cursor: "default"
+                    }}
+                    onMouseEnter={(e) => {
+                      const color = getRandomColor();
+                      e.currentTarget.style.borderColor = color;
+                      e.currentTarget.style.boxShadow = `0 4px 10px ${color}40`;
+
+                      const text = e.currentTarget.querySelector("h5");
+                      if (text) text.style.color = color;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = theme.palette.text.primary;
+                      e.currentTarget.style.boxShadow = "none";
+
+                      const text = e.currentTarget.querySelector("h5");
+                      if (text) text.style.color = theme.palette.text.primary;
+                    }}
+                  >
                     <h5 style={{ margin: 0, whiteSpace: "nowrap", color: theme.palette.text.primary }}>{item.acf.name}</h5>
                   </div>
                 ))}
@@ -149,7 +186,32 @@ const AboutInfo = ({ slug, label }) => {
               {aboutPageInfo
                 .filter(item => item.id > 13)
                 .map(item => (
-                  <div key={item.id} style={{ width: "fit-content", border: `2px solid ${theme.palette.text.primary}`, borderRadius: "50px", padding: "5px 8px" }}>
+                  <div
+                    key={item.id}
+                    style={{
+                      width: "fit-content",
+                      border: `2px solid ${theme.palette.text.primary}`,
+                      borderRadius: "50px",
+                      padding: "5px 8px",
+                      transition: "all 0.2s ease",
+                      cursor: "default"
+                    }}
+                    onMouseEnter={(e) => {
+                      const color = getRandomColor();
+                      e.currentTarget.style.borderColor = color;
+                      e.currentTarget.style.boxShadow = `0 4px 10px ${color}40`;
+
+                      const text = e.currentTarget.querySelector("h5");
+                      if (text) text.style.color = color;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = theme.palette.text.primary;
+                      e.currentTarget.style.boxShadow = "none";
+
+                      const text = e.currentTarget.querySelector("h5");
+                      if (text) text.style.color = theme.palette.text.primary;
+                    }}
+                  >
                     <h5 style={{ margin: 0, whiteSpace: "nowrap", color: theme.palette.text.primary }}>{item.acf.name}</h5>
                   </div>
                 ))}
@@ -167,7 +229,32 @@ const AboutInfo = ({ slug, label }) => {
           <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 3 }}>
             <div style={{ gridColumnStart: 3, gridColumnEnd: 4, display: "flex", flexWrap: "wrap", gap: "8px" }}>
               {aboutPageInfo.map(item => (
-                <div key={item.id} style={{ width: "fit-content", border: `2px solid ${theme.palette.text.primary}`, borderRadius: "50px", padding: "5px 8px" }}>
+                <div
+                  key={item.id}
+                  style={{
+                    width: "fit-content",
+                    border: `2px solid ${theme.palette.text.primary}`,
+                    borderRadius: "50px",
+                    padding: "5px 8px",
+                    transition: "all 0.2s ease",
+                    cursor: "default"
+                  }}
+                  onMouseEnter={(e) => {
+                    const color = getRandomColor();
+                    e.currentTarget.style.borderColor = color;
+                    e.currentTarget.style.boxShadow = `0 4px 10px ${color}40`;
+
+                    const text = e.currentTarget.querySelector("h5");
+                    if (text) text.style.color = color;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = theme.palette.text.primary;
+                    e.currentTarget.style.boxShadow = "none";
+
+                    const text = e.currentTarget.querySelector("h5");
+                    if (text) text.style.color = theme.palette.text.primary;
+                  }}
+                >
                   <h5 style={{ margin: 0, whiteSpace: "nowrap", color: theme.palette.text.primary }}>{item.acf.name}</h5>
                 </div>
               ))}
