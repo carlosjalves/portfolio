@@ -114,6 +114,11 @@ function Navbar() {
               endIcon={<FileDownloadOutlinedIcon />}
               href="/files/CV_CarlosAlves_en.pdf"
               download
+              onClick={() => {
+                if (window.umami) {
+                  window.umami.track("Download CV");
+                }
+              }}
               sx={{
                 color: theme.palette.text.primary,
                 textTransform: "none",
@@ -198,6 +203,11 @@ function Navbar() {
                       endIcon={<FileDownloadRoundedIcon />}
                       href="/files/CV_CarlosAlves_en.pdf"
                       download
+                      onClick={() => {
+                        if (window.umami) {
+                          window.umami.track("Download CV");
+                        }
+                      }}
                       sx={{
                         color: theme.palette.text.primary,
                         textTransform: "none",
