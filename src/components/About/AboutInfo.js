@@ -108,7 +108,19 @@ const AboutInfo = ({ slug, label }) => {
             {aboutPageInfo.map(item => (
               <Grid size={12} key={item.id} sx={{ paddingBottom: "40px" }}>
                 <h2 style={{ fontSize: "24px", fontWeight: 600, color: theme.palette.text.primary }}>{item.acf.title}</h2>
-                <h4 style={{ color: theme.palette.text.primary }}>{item.acf.school}</h4>
+
+
+                <h4 style={{ color: theme.palette.text.primary }}>
+                  <a
+                    href="https://www.uc.pt/fctuc/dei/"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}
+                  >
+                    {item.acf.school} <ArrowOutwardIcon fontSize="1.0rem" />
+                  </a>
+                </h4>
+
                 <h5 style={{ fontWeight: 600, color: theme.palette.text.primary }}>{item.acf.date}</h5>
                 <h5 style={{ paddingTop: "10px" }}>{item.acf.thesis}</h5>
               </Grid>

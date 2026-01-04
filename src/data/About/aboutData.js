@@ -13,7 +13,7 @@ const aboutData = {
     {
       id: 'work_experience3',
       acf: {
-        role: "Graphic Designer",
+        role: "Graphic & Communication Designer",
         company: "SERFER",
         date: "January 2025 - Present",
         description: "Creation of advertising campaigns, brochures, catalogs, and more in line with the brand's strategy;\nDesign and development of packaging for a range of products, ensuring image consistency;\nCreation of offline and online graphic materials to promote the development and implementation of the brand;\nMonitoring the execution of the final artwork and the production of graphic materials, ensuring that they meet the requirements and are delivered in accordance with the established deadlines.",
@@ -34,7 +34,7 @@ const aboutData = {
         role: "Graphic Designer",
         company: "Impress24, Artes Gráficas e Publicidade",
         date: "July 2022 - August 2022 / June 2021 - August 2021 / March 2019 - June 2019",
-        description: "Creating visual identities for companies, designing posters, menus, labels, packages, signs, storefronts, interiors, customization of vehicles;\nProduction process with small and large format digital printing machines.",
+        description: "Creation of visual identities for companies, posters, menus, labels, packages, signs, storefronts, interiors, customization of vehicles;\nProduction process with small and large format digital printing machines.",
       },
     },
   ],
@@ -43,7 +43,7 @@ const aboutData = {
       id: 'education2',
       acf: {
         title: "Master's Degree in Design and Multimedia",
-        school: "University of Coimbra",
+        school: "University of Coimbra (DEI/FCTUC)",
         date: "2022 - 2024",
         thesis: "Master's thesis “Interactive Visualization for Monitoring and Analysis of Satellite Maneuvers in Space”, evaluated with the highest grade of 20/20.",
       },
@@ -52,7 +52,7 @@ const aboutData = {
       id: 'education1',
       acf: {
         title: "Bachelor's Degree in Design and Multimedia",
-        school: "University of Coimbra",
+        school: "University of Coimbra (DEI/FCTUC)",
         date: "2019 - 2022",
       },
     },
