@@ -4,11 +4,11 @@ const styles = (theme) => ({
   "*": {
     padding: 0,
     margin: 0,
-    boxSizing: "border-box",
+    boxSizing: "border-box"
   },
 
   "html": {
-    scrollBehavior: "smooth",
+    scrollbarWidth: "none"
   },
 
   "body": {
@@ -19,9 +19,6 @@ const styles = (theme) => ({
   "a": {
     color: theme.palette.text.primary,
     textDecoration: "none",
-    "&:hover": {
-      textDecoration: "underline",
-    }
   },
 
   ".project-container img": {
