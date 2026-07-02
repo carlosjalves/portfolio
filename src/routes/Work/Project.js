@@ -93,7 +93,7 @@ function Project({ onNavigate }) {
       >
         <div ref={leftRef}>
           <CustomLink
-            onClick={() => onNavigate("back")}
+            onClick={() => onNavigate("/projects")}
             showIcon={false}
             sx={{ color: theme.palette.text.secondary, marginBottom: "15px" }}
             textSx={{ fontSize: "13px" }}

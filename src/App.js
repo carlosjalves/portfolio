@@ -47,11 +47,7 @@ function App() {
     if (currentPath === targetPath) return;
 
     transitionRef.current.play(() => {
-      if (to === "back") {
-        window.history.back();
-      } else {
-        window.location.href = to;
-      }
+      window.location.href = to;
     });
   };
 
