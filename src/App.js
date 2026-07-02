@@ -47,8 +47,11 @@ function App() {
     if (currentPath === targetPath) return;
 
     transitionRef.current.play(() => {
-      //navigate(to);
-      window.location.href = to;
+      if (to === "back") {
+        window.history.back();
+      } else {
+        window.location.href = to;
+      }
     });
   };
 
@@ -73,7 +76,7 @@ function App() {
           <Route path="/" element={<Home onNavigate={handleNavigate} />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Work onNavigate={handleNavigate} />} />
-          <Route path="/projects/:slug" element={<Project />} />
+          <Route path="/projects/:slug" element={<Project onNavigate={handleNavigate} />} />
         </Routes>
       </Box>
       <Footer onNavigate={handleNavigate} />

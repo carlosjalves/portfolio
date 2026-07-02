@@ -121,7 +121,13 @@ function Footer({ onNavigate }) {
           <CustomLink to="https://www.behance.net/carlosjalves" external icon={ArrowOutwardIcon} sx={{ paddingBottom: "30px" }}>
             Behance
           </CustomLink>
-          <CustomLink to={settings?.cvUrl} external icon={ArrowDownwardIcon}>
+          <CustomLink
+            to={settings?.cvUrl}
+            external
+            icon={ArrowDownwardIcon}
+            onClick={(e) => {
+              if (window.umami) window.umami.track("Download CV");
+            }}>
             Download CV
           </CustomLink>
         </Grid>

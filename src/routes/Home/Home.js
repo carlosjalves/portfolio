@@ -170,8 +170,6 @@ function Home({ onNavigate }) {
     }, 1000);
   };
 
-  console.log(projects)
-
   return (
 
     <>
@@ -185,7 +183,7 @@ function Home({ onNavigate }) {
         >
           <h3 ref={bioRef} style={{ fontSize: "32px", lineHeight: "1.1", paddingBottom: "30px", color: "white", mixBlendMode: "difference" }}>{about?.bio}</h3>
           <div ref={linkRef}>
-            <CustomLink to="/about" onNavigate={onNavigate} showIcon={false} sx={{ color: "white", mixBlendMode: "difference" }}>
+            <CustomLink to="/about" onNavigate={onNavigate} showIcon={false} textSx={{ color: theme.palette.text.primary }}>
               [Get to Know Me]
             </CustomLink>
           </div>

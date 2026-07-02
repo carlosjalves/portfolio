@@ -1,5 +1,4 @@
 import { useRef, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useTheme, useMediaQuery } from "@mui/material";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
@@ -17,12 +16,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Project() {
+function Project({ onNavigate }) {
   const theme = useTheme();
   const [projectInfo, setProjectInfo] = useState(null);
 
   const { slug } = useParams();
-  const navigate = useNavigate();
   const leftRef = useRef(null);
 
   const aboutRef = useRef(null);
@@ -79,8 +77,6 @@ function Project() {
     return null;
   }
 
-  console.log(projectInfo)
-
 
   return (
 
@@ -97,7 +93,7 @@ function Project() {
       >
         <div ref={leftRef}>
           <CustomLink
-            onClick={() => navigate(-1)}
+            onClick={() => onNavigate("back")}
             showIcon={false}
             sx={{ color: theme.palette.text.secondary, marginBottom: "15px" }}
             textSx={{ fontSize: "13px" }}
