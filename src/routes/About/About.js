@@ -91,34 +91,42 @@ function About() {
         >
           {/* IMAGE */}
           <Box
-            ref={imageContainerRef}
-            onMouseEnter={handleEnter}
-            onMouseLeave={handleLeave}
-            onMouseMove={handleMove}
-            component="img"
-            src={about?.image}
-            alt={about?._id}
-            loading="lazy"
             sx={{
               width: {
                 xs: "100%",
-                md: "50%"
+                md: "50%",
               },
-              height: "fit-content",
-              objectFit: "cover",
-              transition: "opacity 0.4s ease",
               pr: {
                 xs: 0,
                 sm: 4,
-                md: 2
+                md: 2,
               },
               pb: {
                 xs: 2,
-                md: 0
+                md: 0,
               },
-              cursor: "none"
+              flexShrink: 0,
             }}
-          />
+          >
+            <Box
+              ref={imageContainerRef}
+              component="img"
+              src={about?.image}
+              alt={about?._id}
+              loading="lazy"
+              onMouseEnter={handleEnter}
+              onMouseLeave={handleLeave}
+              onMouseMove={handleMove}
+              sx={{
+                display: "block",
+                width: "100%",
+                height: "auto",
+                objectFit: "cover",
+                transition: "opacity 0.4s ease",
+                cursor: "none",
+              }}
+            />
+          </Box>
 
           {/* ROLE */}
           <h3 style={{ color: theme.palette.text.primary, fontWeight: 700 }}>
