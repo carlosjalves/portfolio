@@ -272,11 +272,8 @@ function Project({ onNavigate }) {
               {projectInfo?.media?.map((item, i) => {
                 const isWebm = item.fileUrl?.endsWith(".webm");
 
-                // lógica principal
-                const cols = item.square ? 1 : 2;
-
                 return (
-                  <ImageListItem key={i} cols={cols}>
+                  <ImageListItem key={i} cols={isMobile ? 1 : item.square ? 1 : 2}>
 
                     {/* FILE (image / gif / webm) */}
                     {item.type === "file" && (

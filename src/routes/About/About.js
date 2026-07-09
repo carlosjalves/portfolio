@@ -46,6 +46,12 @@ function About() {
   const cursorRef = useRef(null);
 
   const handleEnter = () => {
+
+    gsap.set(cursorRef.current, {
+      xPercent: -50,
+      yPercent: -50
+    });
+
     gsap.to(cursorRef.current, {
       opacity: 1,
       scale: 1,
@@ -64,12 +70,9 @@ function About() {
   const handleMove = (e) => {
     const bounds = imageContainerRef.current.getBoundingClientRect();
 
-    const x = e.clientX - bounds.left * 3;
-    const y = e.clientY - bounds.top;
-
     gsap.to(cursorRef.current, {
-      x: x + 0,
-      y: y - 10,
+      x: e.clientX - bounds.left,
+      y: e.clientY - bounds.top,
       duration: 0.35,
       ease: "power2.out"
     });
@@ -146,7 +149,6 @@ function About() {
               top: 0,
               left: 0,
               pointerEvents: "none",
-              transform: "translate(-50%, -50%)",
               opacity: 0,
               scale: 0.8,
               color: "#fff",
