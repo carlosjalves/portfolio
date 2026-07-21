@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useLayoutEffect, useCallback } from "react";
 import { useTheme, useMediaQuery } from "@mui/material";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
@@ -29,6 +29,35 @@ function Project({ onNavigate }) {
 
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
+  const aboutWrapperRef = useRef(null);
+  const [aboutMaxHeight, setAboutMaxHeight] = useState(null);
+
+
+  const updateAboutHeight = useCallback(() => {
+    if (!leftRef.current || !aboutRef.current) return;
+
+    // Mobile: altura fixa
+    if (isMobile) {
+      aboutRef.current.style.maxHeight = "140px";
+      return;
+    }
+
+    // Desktop: cálculo dinâmico
+    const viewportHeight = window.innerHeight;
+    const top = leftRef.current.getBoundingClientRect().top;
+
+    const reservedSpace = 40;
+
+    const leftHeightWithoutAbout =
+      leftRef.current.offsetHeight - aboutRef.current.offsetHeight;
+
+    const availableHeight =
+      viewportHeight - top - reservedSpace - leftHeightWithoutAbout;
+
+    aboutRef.current.style.maxHeight = `${Math.max(140, availableHeight)}px`;
+  }, [isMobile]);
+
+
 
   useEffect(() => {
     async function fetchProject() {
@@ -48,28 +77,106 @@ function Project({ onNavigate }) {
 
   useEffect(() => {
     const el = aboutRef.current;
-    if (!el) return;
+    const left = leftRef.current;
+
+    if (!el || !left || !projectInfo) return;
 
     const checkOverflow = () => {
       setHasOverflow(el.scrollHeight > el.clientHeight);
     };
 
     const handleScroll = () => {
-      const atBottom =
-        el.scrollTop + el.clientHeight >= el.scrollHeight - 2;
-
-      setIsAtBottom(atBottom);
+      setIsAtBottom(
+        el.scrollTop + el.clientHeight >= el.scrollHeight - 2
+      );
     };
 
-    checkOverflow();
-    handleScroll();
+    const update = () => {
+      updateAboutHeight();
+      checkOverflow();
+      handleScroll();
+    };
 
+    // primeira medição
+    update();
+
+    // segunda medição no frame seguinte
+    requestAnimationFrame(update);
+
+    // terceira medição (alguns browsers ainda alteram o layout)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(update);
+    });
+
+    // quando as fontes terminarem de carregar
+    document.fonts?.ready.then(update);
+
+    // observar alterações na coluna esquerda
+    const resizeObserver = new ResizeObserver(update);
+    resizeObserver.observe(left);
+
+    // resize da janela
+    window.addEventListener("resize", update);
+
+    // scroll do about
     el.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", checkOverflow);
 
     return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", update);
       el.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", checkOverflow);
+    };
+  }, [projectInfo, isMobile, updateAboutHeight]);
+
+
+  useLayoutEffect(() => {
+    const calculateHeight = () => {
+      if (!leftRef.current || !aboutWrapperRef.current || !aboutRef.current)
+        return;
+
+      const viewportHeight = window.innerHeight;
+
+      // altura da coluna inteira
+      const leftHeight = leftRef.current.scrollHeight;
+
+      // altura do bloco About completo
+      const aboutBlockHeight = aboutWrapperRef.current.offsetHeight;
+
+      // altura só do texto
+      const aboutTextHeight = aboutRef.current.scrollHeight;
+
+      // tudo o resto (skills, tools, etc.)
+      const otherContent =
+        leftHeight - aboutBlockHeight;
+
+      const topOffset = 100; // top do sticky
+      const bottomPadding = 30;
+
+      const available =
+        viewportHeight -
+        topOffset -
+        bottomPadding -
+        otherContent;
+
+      // altura disponível para o bloco About
+      const max =
+        available -
+        (aboutBlockHeight - aboutTextHeight);
+
+      setAboutMaxHeight(
+        Math.max(
+          Math.min(max, aboutTextHeight),
+          80
+        )
+      );
+    };
+
+    calculateHeight();
+
+    window.addEventListener("resize", calculateHeight);
+
+    return () => {
+      window.removeEventListener("resize", calculateHeight);
     };
   }, [projectInfo]);
 
@@ -102,7 +209,7 @@ function Project({ onNavigate }) {
           </CustomLink>
 
           {/* ABOUT */}
-          <div style={{ borderBottom: `1px solid ${theme.palette.border}` }}>
+          <div ref={aboutWrapperRef} style={{ borderBottom: `1px solid ${theme.palette.border}` }}>
             <h3 style={{ fontSize: "25px", fontWeight: 700 }}>
               {projectInfo.title}
             </h3>
@@ -113,7 +220,7 @@ function Project({ onNavigate }) {
               <div
                 style={{
                   position: "relative",
-                  maxHeight: "140px",
+                  maxHeight: aboutMaxHeight ?? "140px",
                   marginTop: "20px"
                 }}
               >
@@ -122,7 +229,7 @@ function Project({ onNavigate }) {
                   ref={aboutRef}
                   data-lenis-prevent
                   style={{
-                    maxHeight: "140px",
+                    maxHeight: aboutMaxHeight ?? "140px",
                     overflowY: "auto",
                     paddingRight: "6px"
                   }}
