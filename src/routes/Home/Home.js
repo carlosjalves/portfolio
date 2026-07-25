@@ -21,11 +21,13 @@ function Home({ onNavigate }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imagesTrail, setImagesTrail] = useState([]);
   const [lastPosition, setLastPosition] = useState(null);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
   const bioRef = useRef(null);
   const linkRef = useRef(null);
+  const heroRef = useRef(null);
 
   useLayoutEffect(() => {
     if (!about?.bio || !bioRef.current) return;
@@ -134,6 +136,9 @@ function Home({ onNavigate }) {
   const DISTANCE_THRESHOLD = 50; // ajusta (50–120 ideal)
 
   const handleMouseMove = (e) => {
+    if (!hasInteracted) {
+      setHasInteracted(true);
+    }
     const { clientX, clientY } = e;
 
     if (!lastPosition) {
@@ -164,19 +169,65 @@ function Home({ onNavigate }) {
 
     setLastPosition({ x: clientX, y: clientY });
 
-    // remover após 3s
+    // remover após 1s
     setTimeout(() => {
       setImagesTrail(prev => prev.filter(img => img.id !== newImage.id));
     }, 1000);
   };
 
+  useEffect(() => {
+    if (!projects?.length || hasInteracted) return;
+
+    const interval = setInterval(() => {
+      const hero = heroRef.current;
+
+      if (!hero) return;
+
+      const rect = hero.getBoundingClientRect();
+
+      if (rect.bottom <= 0) return;
+
+      const margin = 200;
+
+      const x =
+        margin +
+        Math.random() * (window.innerWidth - margin * 2);
+
+      const y =
+        margin +
+        Math.random() * (window.innerHeight - margin * 2);
+
+      const newImage = {
+        id: Date.now() + Math.random(),
+        x,
+        y,
+        src: projects[currentIndex]?.coverImage.url
+      };
+
+      setImagesTrail(prev => [...prev, newImage]);
+
+      setCurrentIndex(prev => (prev + 1) % projects.length);
+
+      setTimeout(() => {
+        setImagesTrail(prev =>
+          prev.filter(img => img.id !== newImage.id)
+        );
+      }, 1000);
+
+    }, 1800);
+
+    return () => clearInterval(interval);
+
+  }, [projects, currentIndex, hasInteracted]);
+
   return (
 
     <>
       <Grid container key={about?._id}
+        ref={heroRef}
         onMouseMove={handleMouseMove}
         sx={{
-          position: "relative", padding: "100px 0", borderBottom: `1px solid ${theme.palette.border}`, height: "101vh", alignItems: "center"
+          position: "relative", padding: "100px 0", height: "100vh", alignItems: "center", marginBottom: "2px"
         }}>
         <Grid size={{ xs: 12, sm: 6, md: 3, lg: 3, xl: 2 }}
           offset={{ xs: 1, sm: 6 }}

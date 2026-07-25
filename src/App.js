@@ -24,16 +24,24 @@ function App() {
 
   const transitionRef = useRef(null);
 
-  // Initialize Lenis
-  const lenis = new Lenis();
 
-  // Use requestAnimationFrame to continuously update the scroll
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
+  useEffect(() => {
+    const lenis = new Lenis();
 
-  requestAnimationFrame(raf);
+    let rafId;
+
+    const raf = (time) => {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    };
+
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
+  }, []);
 
 
   // 👉 TRANSITION NAVIGATION
@@ -62,6 +70,7 @@ function App() {
       delay: 0.6,
       ease: "power4.inOut"
     });
+
   }, []);
 
   return (
