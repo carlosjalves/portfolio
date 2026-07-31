@@ -38,7 +38,7 @@ function Project({ onNavigate }) {
 
     // Mobile: altura fixa
     if (isMobile) {
-      aboutRef.current.style.maxHeight = "140px";
+      setAboutMaxHeight(null);
       return;
     }
 
@@ -220,7 +220,7 @@ function Project({ onNavigate }) {
               <div
                 style={{
                   position: "relative",
-                  maxHeight: aboutMaxHeight ?? "140px",
+                  maxHeight: isMobile ? "none" : (aboutMaxHeight ?? "140px"),
                   marginTop: "20px"
                 }}
               >
@@ -229,9 +229,9 @@ function Project({ onNavigate }) {
                   ref={aboutRef}
                   data-lenis-prevent
                   style={{
-                    maxHeight: aboutMaxHeight ?? "140px",
-                    overflowY: "auto",
-                    paddingRight: "6px"
+                    maxHeight: isMobile ? "none" : (aboutMaxHeight ?? "140px"),
+                    overflowY: isMobile ? "visible" : "auto",
+                    paddingRight: isMobile ? 0 : "6px",
                   }}
                 >
                   {projectInfo.about.split('\n\n').map((paragraph, index) => (
@@ -254,7 +254,7 @@ function Project({ onNavigate }) {
                 </div>
 
                 {/* FADE (só aparece se houver overflow e NÃO estiver no fundo) */}
-                {hasOverflow && !isAtBottom && (
+                {!isMobile && hasOverflow && !isAtBottom && (
                   <div
                     style={{
                       position: "absolute",
@@ -337,7 +337,11 @@ function Project({ onNavigate }) {
             {/* DESIGNED WITH */}
             {projectInfo.designedWith && projectInfo.designedWith.length > 0 && (
               <Grid size={{ xs: 12, sm: 4 }} sx={{ display: "flex", flexDirection: "column", borderBottom: { xs: `1px solid ${theme.palette.border}`, sm: 0 }, paddingTop: { xs: "10px", sm: 0 }, paddingBottom: { xs: "30px", sm: 0 } }}>
-                <h5 style={{ color: theme.palette.text.secondary, fontSize: "13px" }}>Designed with</h5>
+                <h5 style={{ color: theme.palette.text.secondary, fontSize: "13px" }}>
+                  {projectInfo.slug === "masters-thesis"
+                    ? "Special thanks"
+                    : "Designed with"}
+                </h5>
                 {projectInfo.designedWith?.map((link, index) => (
                   <CustomLink key={index} to={link.url} external icon={ArrowOutwardIcon} textSx={{ fontSize: "13px", fontWeight: 500, color: theme.palette.text.primary }}>
                     {link.title}
